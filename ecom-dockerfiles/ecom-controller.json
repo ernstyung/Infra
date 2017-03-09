@@ -42,7 +42,12 @@
                         ]
 
                }
-            ]
+            ],
+                    "imagePullSecrets": [
+                      {
+                         "name": "mykey"
+                      }
+         ]
        }
       }
    }
