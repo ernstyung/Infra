@@ -1,0 +1,27 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"ecom",
+      "labels":{
+         "app":"ecom"
+      }
+   },
+   "spec":{
+      "ports": [
+         { 
+	         "name":"tomcat-port",
+           "port":8080,
+           "targetPort":"tomcat-port"
+         },
+	       {
+           "name":"ecom-port",
+           "port":8090,
+           "targetPort":"ecom-port"
+         }
+      ],
+      "selector":{
+         "app":"ecom"
+      }
+   }
+}
