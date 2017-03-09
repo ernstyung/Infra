@@ -1,0 +1,49 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"ecom",
+      "labels":{
+         "app":"ecom"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "app":"ecom"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"ecom"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"master",
+                  "image":"ernstdemo/ecom",
+                  "imagePullPolicy": "Always",
+                  "ports":[
+                     {
+                        "name":"ecom-port",
+                        "containerPort":8090
+                     },
+                     {
+                        "name":"tomcat-port",
+                        "containerPort":8080
+                     }
+                  ],
+                        "env": [
+                          {
+                                "name": "SERVICE_NAME",
+                                "value": "ecom"
+                          }
+                        ]
+
+               }
+            ]
+       }
+      }
+   }
+}
