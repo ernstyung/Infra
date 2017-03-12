@@ -13,5 +13,5 @@ ADD ./run.sh /usr/local/bin/run
 EXPOSE 8080
 RUN chmod +x /usr/local/bin/run
 ENTRYPOINT ["/usr/local/bin/run"]
-COPY clothkart-0.0.1.war /opt/apache-tomcat-7.0.75/webapps
-RUN cd /opt/apache-tomcat-7.0.75/webapps && mv clothkart-0.0.1.war ecom.war
+COPY hello-world-war-1.0.0.war /opt/apache-tomcat-7.0.75/webapps
+RUN cd /opt/apache-tomcat-7.0.75/webapps && mv hello-world-war-1.0.0.war helloworld.war
