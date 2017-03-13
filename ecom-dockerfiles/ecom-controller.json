@@ -2,33 +2,29 @@
    "kind":"ReplicationController",
    "apiVersion":"v1",
    "metadata":{
-      "name":"ecom",
+      "name":"helloworld",
       "labels":{
-         "app":"ecom"
+         "app":"helloworld"
       }
    },
    "spec":{
       "replicas":1,
       "selector":{
-         "app":"ecom"
+         "app":"helloworld"
       },
       "template":{
          "metadata":{
             "labels":{
-               "app":"ecom"
+               "app":"helloworld"
             }
          },
          "spec":{
             "containers":[
                {
                   "name":"master",
-                  "image":"ernstdemo/ecom",
+                  "image":"ernstdemo/helloworld",
                   "imagePullPolicy": "Always",
                   "ports":[
-                     {
-                        "name":"ecom-port",
-                        "containerPort":8090
-                     },
                      {
                         "name":"tomcat-port",
                         "containerPort":8080
@@ -37,7 +33,7 @@
                         "env": [
                           {
                                 "name": "SERVICE_NAME",
-                                "value": "ecom"
+                                "value": "helloworld"
                           }
                         ]
 
