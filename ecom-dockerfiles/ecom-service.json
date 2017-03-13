@@ -2,26 +2,21 @@
    "kind":"Service",
    "apiVersion":"v1",
    "metadata":{
-      "name":"ecom",
+      "name":"helloworld",
       "labels":{
-         "app":"ecom"
+         "app":"helloworld"
       }
    },
    "spec":{
       "ports": [
          { 
-	         "name":"tomcat-port",
+	   "name":"tomcat-port",
            "port":8080,
            "targetPort":"tomcat-port"
-         },
-	       {
-           "name":"ecom-port",
-           "port":8090,
-           "targetPort":"ecom-port"
          }
       ],
       "selector":{
-         "app":"ecom"
+         "app":"helloworld"
       }
    }
 }
